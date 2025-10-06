@@ -45,6 +45,117 @@ public class Ejercicio9 {
             ord3 = num4;
             ord4 = num3;
             }
+        } else if (num3<num2 && num3<num4){
+            ord2 = num3;
+            if (num2<num4){
+            ord3 = num2;
+            ord4 = num4;
+            } else {
+            ord3 = num4;
+            ord4 = num2;
+            }
+        } else if (num4<num2 && num4<num3){
+            ord2 = num4;
+            if (num2<num3){
+            ord3 = num2;
+            ord4 = num3;
+            } else {
+            ord3 = num3;
+            ord4 = num2;
+            }
+        }
+    }
+    if (num2<num1 && num2<num3 && num2<num4){
+        ord1 = num2;
+        if (num1<num3 && num1<num4){
+        ord2 = num1;
+            if (num3<num4){
+            ord3 = num3;
+            ord4 = num4;
+            } else {
+            ord3 = num4;
+            ord4 = num3;
+            }
+        } else if (num3<num1 && num3<num4){
+            ord2 = num3;
+            if (num1<num4){
+            ord3 = num1;
+            ord4 = num4;
+            } else {
+            ord3 = num4;
+            ord4 = num1;
+            }
+        } else if (num4<num1 && num4<num3){
+            ord2 = num4;
+            if (num1<num3){
+            ord3 = num1;
+            ord4 = num3;
+            } else {
+            ord3 = num3;
+            ord4 = num1;
+            }
+        }
+    }
+    if (num3<num2 && num3<num1 && num3<num4){
+        ord1 = num3;
+        if (num2<num1 && num2<num4){
+        ord2 = num2;
+            if (num1<num4){
+            ord3 = num1;
+            ord4 = num4;
+            } else {
+            ord3 = num4;
+            ord4 = num1;
+            }
+        } else if (num1<num2 && num1<num4){
+            ord2 = num1;
+            if (num2<num4){
+            ord3 = num2;
+            ord4 = num4;
+            } else {
+            ord3 = num4;
+            ord4 = num2;
+            }
+        } else if (num4<num2 && num4<num1){
+            ord2 = num4;
+            if (num2<num1){
+            ord3 = num2;
+            ord4 = num1;
+            } else {
+            ord3 = num1;
+            ord4 = num2;
+            }
+        }
+    }
+    if (num4<num2 && num4<num3 && num4<num1){
+        ord1 = num4;
+        if (num2<num3 && num2<num1){
+        ord2 = num2;
+            if (num3<num1){
+            ord3 = num3;
+            ord4 = num1;
+            } else {
+            ord3 = num1;
+            ord4 = num3;
+            }
+        } else if (num3<num2 && num3<num1){
+            ord2 = num3;
+            if (num2<num1){
+            ord3 = num2;
+            ord4 = num1;
+            } else {
+            ord3 = num1;
+            ord4 = num2;
+            }
+        } else if (num1<num2 && num1<num3){
+            ord2 = num1;
+            if (num2<num3){
+            ord3 = num2;
+            ord4 = num3;
+            } else {
+            ord3 = num3;
+            ord4 = num2;
+            }
         }
     }
     System.out.println("El orden de los números introducidos es: " + ord1 +" - " + ord2 + " - " + ord3 + " - " + ord4 );
