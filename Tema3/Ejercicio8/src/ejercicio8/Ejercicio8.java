@@ -19,7 +19,7 @@ public class Ejercicio8 {
     
     System.out.println("Introduce una cantidad de dinero: ");
         
-    int total = entrada.nextInt();
+    int total = entrada.nextInt();          //pido al usuario el total de dinero
     
     de50 = total / 50;
     
@@ -31,7 +31,7 @@ public class Ejercicio8 {
     
     de2 = ((((total%50)%20)%10)%5) / 2;
     
-    de1 = (((((total%50)%20)%10)%5)%2);
+    de1 = (((((total%50)%20)%10)%5)%2);     //opero con el dinero para obtener la cantidad de billetes
     
     System.out.println(+ total + " euros se descomponen en:");
     
@@ -51,7 +51,7 @@ public class Ejercicio8 {
         System.out.println("Monedas de 2: " + de2);
     }
     if (de1 > 0){
-        System.out.println("Monedas de 1: " + de1);
+        System.out.println("Monedas de 1: " + de1);         //hago una sucesión de condicionales, si hay billetes de esa cantidad se imprime
     }
         // TODO code application logic here
     }

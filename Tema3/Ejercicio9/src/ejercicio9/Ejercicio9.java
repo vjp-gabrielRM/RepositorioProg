@@ -32,7 +32,7 @@ public class Ejercicio9 {
     
     System.out.println("Introduce el cuarto número: ");
         
-    num4 = entrada.nextInt();
+    num4 = entrada.nextInt();                               //pido los 4 números al usuario
     
     if (num1<num2 && num1<num3 && num1<num4){
         ord1 = num1;
@@ -157,7 +157,7 @@ public class Ejercicio9 {
             ord4 = num2;
             }
         }
-    }
+    }                           //comparo todos los números entre sí anidando condicionales y al final imprimo el resultado
     System.out.println("El orden de los números introducidos es: " + ord1 +" - " + ord2 + " - " + ord3 + " - " + ord4 );
         // TODO code application logic here
     }

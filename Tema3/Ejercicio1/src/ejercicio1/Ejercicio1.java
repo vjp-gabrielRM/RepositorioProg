@@ -17,9 +17,9 @@ public class Ejercicio1 {
     
     System.out.println("Introduce un número: ");
         
-    int num = entrada.nextInt();
+    int num = entrada.nextInt();            //pido un número al usuario
      
-    if (num<0){
+    if (num<0){                             //comparo con 0, si es menor imprimo que es negativo, si es mayor imprimo que es positivo
     System.out.println("El número introducido es negativo");
               } else {
     System.out.println("El número introducido es positivo");
