@@ -63,6 +63,8 @@ public class Ejercicio32 {
                 System.out.println("Error, introduce un dia válido");
             }
         }while (diaNacimiento<=0 || diaNacimiento>30);
+        
+        annosEdad=annoActual-annoNacimiento;
         // TODO code application logic here
     }
     

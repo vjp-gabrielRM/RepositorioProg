@@ -4,7 +4,6 @@
  */
 package ejercicio18;
 
-import static java.lang.Math.sqrt;
     import java.util.Scanner;
 
 public class Ejercicio18 {
