@@ -15,7 +15,7 @@ public class Ejercicio29 {
         
     Scanner entrada = new Scanner(System.in);
     int num = (int) (Math.random()*100+1);          //declaro una variable i para hacer de contador
-    int intento;
+    int intento, numIntentos=0;
     do{                                         //hago un bucle pidiendo que el usuario introduzca la contraseña, si es incorrecta repito y pierde un intento
         System.out.println("Acierta el número de 1 a 100: ");
         
@@ -30,10 +30,11 @@ public class Ejercicio29 {
                 System.out.println(", el número es menor que " +intento);
             }
         }
+        numIntentos++;
     } while (intento!=num);
     
     if (intento==num){                  //al salir del bucle, si ha acertado se lo digo, si ha fallado 3 veces le digo "acceso bloqueado"
-        System.out.println("Has acertado");
+        System.out.println("Has acertado tras " + numIntentos + " intentos");
     }    
         // TODO code application logic here
     }
