@@ -27,13 +27,13 @@ public class Ejercicio27 {
         
         do{
             
-        System.out.println("1. Suma");
-        System.out.println("2. Resta");
-        System.out.println("3. Producto");
-        System.out.println("4. División");
-        System.out.println("5. Salir");
+            System.out.println("1. Suma");
+            System.out.println("2. Resta");
+            System.out.println("3. Producto");
+            System.out.println("4. División");
+            System.out.println("5. Salir");
         
-        operacion = entrada.nextInt();          //creo un menú y procedo en base a lo que elija el usuario
+            operacion = entrada.nextInt();          //creo un menú y procedo en base a lo que elija el usuario
             switch (operacion) {
                 case 1:
                     resultado = num1 + num2;
@@ -53,7 +53,6 @@ public class Ejercicio27 {
                     break;
                 default:
                     System.out.println ("Por favor, introduce una opción válida");
-                    break;
             }
         } while (operacion!=5); //con esto me aseguro de que el programa no termine hasta que el usuario pida salir
         
