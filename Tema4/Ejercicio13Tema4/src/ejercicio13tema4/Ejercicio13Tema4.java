@@ -10,6 +10,13 @@ package ejercicio13tema4;
  * @author alumno
  */
 public class Ejercicio13Tema4 {
+    
+    public static int entradaNum(){
+        Scanner entrada = new Scanner (System.in);
+        System.out.println("Por favor introduzca un número mayor que 1: ");   //pido un número al usuario
+        return entrada.nextInt();
+    }
+    
     public static void contador(int num){      //creo un método para hacer las veces de contador
         int i;
         for (i=1; i<=num; i++){
@@ -26,13 +33,19 @@ public class Ejercicio13Tema4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        Scanner entrada = new Scanner (System.in);              //declaro las variables entrada y num
         int num;
-        System.out.println("Por favor introduzca un la nota de un alumno sin decimales: ");   //pido un número al usuario
-        num = entrada.nextInt();
+        boolean esMayor;
+        do{
+            num = entradaNum();
+            esMayor = mayorQue1(num);
+            if (!esMayor){
+                System.out.println("No válido, introduzca un número mayor que 1");
+            }
+        } while (!esMayor);
         
-        contador(num);                                 //llamo al método para que se ejecute
+        if(esMayor){
+            contador(num);
+        }
         // TODO code application logic here
     }
     
