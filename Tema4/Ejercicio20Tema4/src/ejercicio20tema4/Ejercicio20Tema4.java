@@ -55,7 +55,7 @@ public class Ejercicio20Tema4 {
             System.out.println("Muy bien, respuesta correcta");
             puntuacionFinal+=PUNTUACION;
         } else {
-            System.out.println("Respuesta incorrecta. La respuesta correcta sería " + RESPUESTA1);
+            System.out.println("No es correcto. La respuesta correcta sería " + RESPUESTA1);
         }
         
         System.out.println("EXAMEN DE CULTURA GENERAL");
@@ -66,10 +66,10 @@ public class Ejercicio20Tema4 {
             System.out.println("Muy bien, respuesta correcta");
             puntuacionFinal+=PUNTUACION;
         } else {
-            System.out.println("Respuesta incorrecta. La respuesta correcta sería " + RESPUESTA2);
+            System.out.println("No es correcto. La respuesta correcta sería " + RESPUESTA2);
         }
         
-        System.out.println("Su puntuación es de " + puntuacionFinal);
+        System.out.println("NOTA DEL EXAMEN: " + puntuacionFinal);
     }
     
 }
