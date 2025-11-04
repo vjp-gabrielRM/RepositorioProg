@@ -10,8 +10,16 @@ package ejercicio7tema4;
  * @author alumno
  */
 public class Ejercicio7Tema4 {
+    
+    /**
+     * Método que ordena los números usando el método burbuja
+     * @param num1
+     * @param num2
+     * @param num3
+     * @param num4 
+     */
     public static void ordenar(int num1, int num2, int num3, int num4){      //en el método compruebo si el número introducido es positivo o negativo comparando con 0
-        int temp = 0;
+        int temp;
         while (!(num1<num2 && num1<num3 && num1<num4 && num2<num3 && num2<num4 && num3<num4)){
             if (num1>num2){
                 temp = num1;
