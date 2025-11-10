@@ -10,66 +10,66 @@ package ejercicio01tema5;
  */
 public class Coche {
     //Atributos, no se inicializan
-    private String ruedas;
-    private String suspension;
-    private int espejos;
+    private String marca;
+    private String modelo;
+    private String color;
+    private int velocidad;
+    private boolean motorEncendido;
     
     //Constructores
     //Constructor por defecto
     public Coche(){
-        this.ruedas = "";
-        this.suspension = "";
-        this.espejos = 0;
+        this.marca = "";
+        this.modelo = "";
+        this.color = "";
+        this.velocidad = 0;
+        this.motorEncendido = false;
     }
     
     //Constructor parametrizado
-    public Coche(String ruedas, String suspension, int espejos){
-        this.ruedas = ruedas;
-        this.suspension = suspension;
-        this.espejos = espejos;
+    public Coche(String marca, String modelo, String color, int velocidad, boolean motorEncendido){
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+        this.velocidad = velocidad;
+        this.motorEncendido = motorEncendido;
     }
     
     //Getters y setters
-    public String getRuedas(){
-        return this.ruedas;
+    
+    public void establecerMarca(String marca){
+        this.marca = marca;
     }
     
-    public void setRuedas(String ruedas){
-        this.ruedas = ruedas;
+    public void establecerModelo(String modelo){
+        this.modelo = modelo;
     }
     
-    public String getSuspension(){
-        return this.suspension;
-    }
-    
-    public void setSuspension(String suspension){
-        this.suspension = suspension;
-    }
-    
-    public int getEspejos(){
-        return this.espejos;
-    }
-    
-    public void setEspejos(int espejos){
-        this.espejos = espejos;
+    public void establecerColor(String color){
+        this.color = color;
     }
     
     //Otros métodos
-    public void acelerar(){
-        System.out.println("Acelerando");
+    public void arrancarCoche(){
+        this.motorEncendido = true;
+        this.velocidad = 10;
     }
     
-    public void frenar(){
-        System.out.println("Frenando");
+    public void apagarCoche(){
+        this.motorEncendido = false;
+        this.velocidad = 0;
     }
     
-    public void girar(){
-        System.out.println("Girando");
+    public void acelerarCoche(){
+        this.velocidad = 20;
+    }
+    
+    public void frenarCoche(){
+        this.velocidad = 6;
     }
     
     //To String
-    @Override
-    public String toString(){
-        return "Mi coche tiene ruedas " + this.ruedas + " suspensión " + this.suspension + " y " + this.espejos + " espejos";
+    public String obtenerEstado(){
+        return "Mi coche es de marca " + this.marca + " de modelo " + this.modelo + " y de color " + this.color + " motorEncendido está a " + this.motorEncendido + " va a una velocidad de " + this.velocidad;
     }
 }

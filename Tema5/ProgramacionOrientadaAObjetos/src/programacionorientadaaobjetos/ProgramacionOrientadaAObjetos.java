@@ -23,14 +23,35 @@ public class ProgramacionOrientadaAObjetos {
     //    System.out.println(miCoche.getEspejos());
         
     //    miCoche.acelerar();
-        //gabriel es un degenerado
-        Coche tuCoche = new Coche("Michelin", "Baja", 3);
-        System.out.println(tuCoche.toString());
-        System.out.println(tuCoche);
+    //    Coche tuCoche = new Coche("Michelin", "Baja", 3);
+    //    System.out.println(tuCoche.toString());
+    //    System.out.println(tuCoche);
         
-        System.out.println(tuCoche.getRuedas());
-        // TODO code application logic here
-        System.out.println("Gabriel es un degenerado en busca de niñas");
+    //    System.out.println(tuCoche.getRuedas());
+    
+    //MODIFICADORES DE ACCESO
+    Bicicleta bicicleta = new Bicicleta();
+    System.out.println(bicicleta.ruedas);
+    System.out.println(bicicleta.getEstaPedaleando());
+    
+    System.out.println("¿Cuántas bicis hemos creado?");
+    System.out.println(bicicleta.getNumBicicletas());
+    
+    //PASO DE PARÁMETROS POR VALOR O POR REFERENCIA
+    int num1 = 4;
+        System.out.println(suma(num1));
+    
+    Bicicleta bici = new Bicicleta();
+    empezarAPedalear(bici);
+    }
+    
+    public static int suma(int num1){
+        int num2 = 3;
+        return num1 + num2;
+    }
+    
+    public static void empezarAPedalear(){
+        bici.setEstaPedaleando(true);
     }
     
 }
