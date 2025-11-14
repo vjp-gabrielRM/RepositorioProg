@@ -30,28 +30,13 @@ public class ProgramacionOrientadaAObjetos {
     //    System.out.println(tuCoche.getRuedas());
     
     //MODIFICADORES DE ACCESO
-    Bicicleta bicicleta = new Bicicleta();
-    System.out.println(bicicleta.ruedas);
-    System.out.println(bicicleta.getEstaPedaleando());
+    Ciclista federico = new Ciclista("Federico", 1, "Líder");
     
-    System.out.println("¿Cuántas bicis hemos creado?");
-    System.out.println(bicicleta.getNumBicicletas());
+    Bicicleta biciFede = new Bicicleta(2, "recto", "de carretera", "de disco", true, federico);
     
-    //PASO DE PARÁMETROS POR VALOR O POR REFERENCIA
-    int num1 = 4;
-        System.out.println(suma(num1));
-    
-    Bicicleta bici = new Bicicleta();
-    empezarAPedalear(bici);
-    }
-    
-    public static int suma(int num1){
-        int num2 = 3;
-        return num1 + num2;
-    }
-    
-    public static void empezarAPedalear(){
-        bici.setEstaPedaleando(true);
+        System.out.println(biciFede);
+        
+        System.out.println(biciFede.getCiclista().getNombre());
     }
     
 }

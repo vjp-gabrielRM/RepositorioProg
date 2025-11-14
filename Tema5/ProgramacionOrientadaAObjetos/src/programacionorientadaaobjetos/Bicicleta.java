@@ -16,7 +16,11 @@ public class Bicicleta {
     private String frenos;
     private boolean estaPedaleando;
     
+    //ATRIBUTO STATIC DE LA CLASE
     private static int numBicicletas = 0;
+    
+    //ATRIBUTO DE OTRA CLASE (composición de clases)
+    private Ciclista ciclista;
     
     //CONSTRUCTORES
     public Bicicleta(){
@@ -26,15 +30,19 @@ public class Bicicleta {
         this.frenos = "";
         this.estaPedaleando = false;
         incrementarNumBicicletas();
+        
+        this.ciclista = new Ciclista();
     }
     
-    public Bicicleta(int ruedas, String manillar, String pedales, String frenos, boolean estaPedaleando){
+    public Bicicleta(int ruedas, String manillar, String pedales, String frenos, boolean estaPedaleando, Ciclista ciclista){
         this.ruedas = ruedas;
         this.manillar = manillar;
         this.pedales = pedales;
         this.frenos = frenos;
         this.estaPedaleando = estaPedaleando;
         incrementarNumBicicletas();
+        
+        this.ciclista = ciclista;
     }
     
     //GETTERS Y SETTERS
@@ -81,6 +89,14 @@ public class Bicicleta {
     public int getNumBicicletas(){
         return this.numBicicletas;
     }
+    
+    public Ciclista getCiclista(){
+        return this.ciclista;
+    }
+    
+    public void setCiclista(Ciclista ciclista){
+        this.ciclista = ciclista;
+    }
     //MÉTODOS
     
     private void acelerar(){
@@ -98,7 +114,9 @@ public class Bicicleta {
                 ", un manillar " + this.manillar +
                 ", unos pedales " + this.pedales +
                 ", unos frenos" + this.frenos +
-                " y ahora, ¿estoy pedaleando? " + this.estaPedaleando;
+                " y ahora, ¿estoy pedaleando? " + this.estaPedaleando +
+                
+                ". El ciclista es " + this.ciclista.toString();
                 
     }
 }
