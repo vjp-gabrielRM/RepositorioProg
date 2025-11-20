@@ -13,7 +13,7 @@ public class ProgramacionOrientadaAObjetos {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void mondongo(String[] args) {
     //    Coche miCoche = new Coche();
     //    System.out.println(miCoche.toString());
         

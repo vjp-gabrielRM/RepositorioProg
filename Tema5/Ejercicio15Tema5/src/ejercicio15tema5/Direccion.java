@@ -59,4 +59,9 @@ public class Direccion {
     public void setCiudad(String ciudad){
         this.ciudad = ciudad;
     }
+    
+    @Override
+    public String toString(){
+        return "su dirección es " + this.calle + ", número " + this.numero + " y piso " + this.piso + " en " + this.ciudad;
+    }
 }
