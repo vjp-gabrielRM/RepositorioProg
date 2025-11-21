@@ -5,7 +5,7 @@
 package programacionorientadaaobjetos.herencia;
 
 /**
- *
+ * 
  * @author alumno
  */
 public class Main {

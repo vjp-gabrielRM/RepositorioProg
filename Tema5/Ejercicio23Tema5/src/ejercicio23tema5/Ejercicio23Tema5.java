@@ -5,7 +5,7 @@
 package ejercicio23tema5;
 
 /**
- *
+ * 
  * @author alumno
  */
 public class Ejercicio23Tema5 {
