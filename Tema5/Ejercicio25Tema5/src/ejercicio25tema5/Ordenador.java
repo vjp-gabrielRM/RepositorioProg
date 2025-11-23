@@ -73,6 +73,8 @@ public class Ordenador {
     
     @Override
     public String toString(){
-        return "A las chicas de verdad les gusta el pollo frito";
+        return "RAM: " + this.memoriaRAM + ", capacidad disco duro: " + this.capacidadHDD +
+                ", modelo de procesador: " + this.modeloCPU + ", modelo de gráfica: " + this.modeloGPU +
+                ", precio: " + this.precio + " euros";
     }
 }

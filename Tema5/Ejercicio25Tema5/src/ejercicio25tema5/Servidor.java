@@ -48,12 +48,12 @@ public class Servidor extends Ordenador{
         return this.modeloRaton;
     }
     
-    public void setModelTRaton(String modeloRaton){
+    public void setModeloRaton(String modeloRaton){
         this.modeloRaton = modeloRaton;
     }
     
     @Override
     public String toString(){
-        return "Paquito el chocolatero";
+        return "Servidor con las características: " + super.toString() + ", tamaño de monitor: " + this.tamannoMonitor + ", modelo de teclado: " + this.modeloTeclado + " y modelo de ratón: " + this.modeloRaton;
     }
 }

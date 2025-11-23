@@ -36,11 +36,11 @@ public class Portatil extends Ordenador{
         this.tamannoPantalla = tamannoPantalla;
     }
     
-    public String getmarca(){
+    public String getMarca(){
         return this.marca;
     }
     
-    public void setmarca(String marca){
+    public void setMarca(String marca){
         this.marca = marca;
     }
     
@@ -54,6 +54,6 @@ public class Portatil extends Ordenador{
     
     @Override
     public String toString(){
-        return "Paquito el chocolatero portátil";
+        return "Portátil con las características: " + super.toString() + ", marca: " + this.marca + ", tamaño de pantalla: " + this.tamannoPantalla + " y peso: " + this.peso + " kilos";
     }
 }
