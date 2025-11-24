@@ -23,7 +23,7 @@ public class Ejercicio17Tema5 {
         Enunciado enunciado4 = new Enunciado("¿Cuál es la capital de Italia?", "Roma");
         
         if(enunciado1.preguntar()){
-            puntuacion += ACIERTO;
+            puntuacion += ACIERTO; //puntuacion = puntuacion + ACIERTO;
         }
         if(enunciado2.preguntar()){
             puntuacion += ACIERTO;
