@@ -15,8 +15,8 @@ public class Tema06Ejercicio04 {
      */
     public static void main(String[] args) {
         Perro perro = new Perro("Sultán", 7, 15) {};
-        Lobo lobo = new Lobo("Lycus", 4, 20) {};
-        Leon leon = new Leon("Ramón", 6, 40) {};
+        Lobo lobo = new Lobo("Lycus", 4, 50) {};
+        Leon leon = new Leon("Ramón", 6, 165    ) {};
         Gato gato = new Gato("Silvestre", 2, 3) {};
         
         System.out.println("------ Perro ------");
@@ -58,6 +58,38 @@ public class Tema06Ejercicio04 {
         gato.mostrarHabitat();
         gato.nombreCientifico();
         System.out.println("");
+        
+        //POLIMORFISMO
+        System.out.println("oºoºoºoºo POLIMORFISMO oºoºoºoºo");
+        System.out.println("");
+        Animal animal;
+        
+        System.out.println("------ Perro ------");
+        animal = new Perro("Chucho", 3, 9) {};
+        System.out.println("Nombre: " + animal.getNombre());
+        System.out.println("Edad: " + animal.getEdad() + " años");
+        System.out.println("Peso: " + animal.getPeso() + "kg");
+        System.out.println("");
+        
+        System.out.println("------ Lobo ------");
+        animal = new Lobo("Lobete", 2, 45) {};
+        System.out.println("Nombre: " + animal.getNombre());
+        System.out.println("Edad: " + animal.getEdad() + " años");
+        System.out.println("Peso: " + animal.getPeso() + "kg");
+        System.out.println("");
+        
+        System.out.println("------ León ------");
+        animal = new Leon("Simba", 3, 150) {};
+        System.out.println("Nombre: " + animal.getNombre());
+        System.out.println("Edad: " + animal.getEdad() + " años");
+        System.out.println("Peso: " + animal.getPeso() + "kg");
+        System.out.println("");
+        
+        System.out.println("------ Gato ------");
+        animal = new Gato("Tom", 5, 4) {};
+        System.out.println("Nombre: " + animal.getNombre());
+        System.out.println("Edad: " + animal.getEdad() + " años");
+        System.out.println("Peso: " + animal.getPeso() + "kg");
     }
     
 }
