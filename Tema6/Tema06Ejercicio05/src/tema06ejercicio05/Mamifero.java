@@ -8,7 +8,7 @@ package tema06ejercicio05;
  *
  * @author alumno
  */
-public class Mamifero {
+public abstract class Mamifero {
     private String nombre;
     private String sexo;
     private String color;
@@ -22,10 +22,10 @@ public class Mamifero {
     }
     
     public Mamifero(String nombre, String sexo, String color, int edad){
-        this.nombre = "";
-        this.sexo = "";
-        this.color = "";
-        this.edad = 0;
+        this.nombre = nombre;
+        this.sexo = sexo;
+        this.color = color;
+        this.edad = edad;
     }
     
     public String getNombre(){
@@ -62,6 +62,6 @@ public class Mamifero {
     
     @Override
     public String toString(){
-        return "Animal ni bien ni mal";
+        return "Nombre: " + this.nombre + "\n" + "Sexo: " + this.sexo + "\n" + "Color: " + this.color + "\n" + "Edad: " + this.edad + " años\n";
     }
 }
