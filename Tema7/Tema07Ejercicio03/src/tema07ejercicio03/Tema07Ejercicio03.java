@@ -32,7 +32,7 @@ public class Tema07Ejercicio03 {
         return longitud;
     }
     
-    public static void mostraArray(int array[]){
+    public static void mostrarArray(int array[]){
         for(int i = 0; i < array.length; i++){
             System.out.println("El " + (i+1) + "º número del array es " + array[i]);
         }
@@ -47,7 +47,7 @@ public class Tema07Ejercicio03 {
     public static void main(String[] args) {
         int[] array = new int[pedirLongitud()];
         rellenarArray(array);
-        mostraArray(array);
+        mostrarArray(array);
     }
     
 }
