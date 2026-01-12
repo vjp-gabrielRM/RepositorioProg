@@ -4,9 +4,6 @@
  */
 package tema07ejercicio04;
 
-import java.util.Scanner;
-import java.util.InputMismatchException;
-
 /**
  *
  * @author alumno
