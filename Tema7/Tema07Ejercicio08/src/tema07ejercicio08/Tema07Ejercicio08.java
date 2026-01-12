@@ -21,7 +21,7 @@ public class Tema07Ejercicio08 {
     public static void mostrarArray(int num){
         int[] array = new int [5];
         array = darVuelta(num);
-        System.out.println("El número escrito al revés es " + array[4] + array[3] + array[2] + array[1] + array[0]);
+        System.out.println("El número escrito al revés es " + array[0] + array[1] + array[2] + array[3] + array[4]);
     }
     
     public static int[] darVuelta(int num){
@@ -29,7 +29,7 @@ public class Tema07Ejercicio08 {
         
         // Divido el número en cifras y relleno el array al revés
         for(int i = 0; i < array.length; i++){
-            array[(array.length - 1) - i] = num % 10;
+            array[i] = num % 10;
             num /= 10;
         }
         
