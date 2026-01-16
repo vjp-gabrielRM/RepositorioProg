@@ -10,6 +10,10 @@ package tema07ejercicio04;
  */
 public class Tema07Ejercicio04 {
     
+    /**
+     * Método que rellena un array bidimensional con números aleatorios de 100 a 200
+     * @param array 
+     */
     public static void rellenarArray(int array[][]){
         for(int i = 0; i < array.length; i++){
             for(int j = 0; j < array[i].length; j++){
@@ -18,6 +22,10 @@ public class Tema07Ejercicio04 {
         }
     }
     
+    /**
+     * Método que muestra los números pares contenidos en un array así como sus coordenadas
+     * @param array 
+     */
     public static void mostrarPares(int array[][]){
         System.out.println("Los elementos pares del array son:");
         for(int i = 0; i < array.length; i++){
@@ -29,6 +37,10 @@ public class Tema07Ejercicio04 {
         }
     }
     
+    /**
+     * Método que muestra un array bidimensional completo en forma de matriz
+     * @param array 
+     */
     public static void mostrarArray(int array[][]){
         System.out.println("El array completo es:");
         for(int i = 0; i < array.length; i++){
