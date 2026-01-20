@@ -58,6 +58,11 @@ public class Tema07Ejercicio16 {
                 notas[i][j] = pedirOpcion();
             }
         }
+        /*for(int i = 0; i < notas.length; i++){
+            for(int j = 0; j < notas[i].length; j++){
+                notas[i][j] = (int) (Math.random() * (11 - 0) + 0);
+            }
+        }*/
     }
     
     /**
@@ -67,12 +72,13 @@ public class Tema07Ejercicio16 {
      * @param asignaturas 
      */
     public static void mostrarNotas(int notas[][], String alumnos[], String asignaturas[]){
-        System.out.println("Las notas de los alumnos son: ");
+        System.out.println("Las notas de los alumnos son:\n");
         for(int i = 0; i < notas.length; i++){
-            System.out.println(alumnos[i]);
+            System.out.println("--- " + alumnos[i] + " ---");
             for(int j = 0; j < notas[i].length; j++){
                 System.out.println(asignaturas[j] + ": " + notas[i][j]);
             }
+            System.out.println("");
         }
     }
     
@@ -108,12 +114,12 @@ public class Tema07Ejercicio16 {
      * @param alumnos 
      */
     public static void mostrarMasSuspensos(int notas[][], String alumnos[]){
-        int[] suspensos = new int[6];
+        int[] suspensos = {0, 0, 0, 0, 0, 0};
         int pos = 0;
         for(int i = 0; i < notas.length; i++){
-            for(int j = 0; j < notas[i].length; j++){
+            for(int j = 0; j < notas[0].length; j++){
                 if(notas[i][j] < 5){
-                    suspensos[j]++;
+                    suspensos[i]++;
                 }
             }
         }
@@ -124,7 +130,7 @@ public class Tema07Ejercicio16 {
                 }
             }
         }
-        System.out.println("El mes con más ventas ha sido " + alumnos[pos] + " con " + suspensos[pos] + " suspensos");
+        System.out.println("El alumno con más suspensos ha sido " + alumnos[pos] + " con " + suspensos[pos] + " suspensos");
     }
     
     /**
@@ -136,9 +142,10 @@ public class Tema07Ejercicio16 {
         float suma = 0;
         int pos = 0;
         float[] medias = new float[4];
-        for(int i = 0; i < notas[i].length; i++){
+        for(int i = 0; i < notas[0].length; i++){
+            suma = 0;
             for(int j = 0; j < notas.length; j++){
-                suma += notas[i][j];
+                suma += notas[j][i];
             }
             medias[i] = suma / notas.length;
         }
@@ -182,11 +189,14 @@ public class Tema07Ejercicio16 {
                 case 5:
                     mostrarMasDificil(notas, asignaturas);
                     break;
+                
+                case 6:
+                    break;
                     
                 default:
                     System.out.println("Opción no válida, por favor inténtelo de nuevo");
             }
-        }while(opcion!=5);
+        }while(opcion!=6);
         
     }
     

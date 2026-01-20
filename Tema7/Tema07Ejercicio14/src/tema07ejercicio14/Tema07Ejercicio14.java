@@ -140,6 +140,10 @@ public class Tema07Ejercicio14 {
                 case 4:
                     mostrarMayorTemp(array, dias);
                     break;
+                    
+                case 5:
+                    break;
+                    
                 default:
                     System.out.println("Opción no válida, por favor inténtelo de nuevo");
             }
