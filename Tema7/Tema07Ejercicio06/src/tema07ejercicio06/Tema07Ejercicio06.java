@@ -47,7 +47,7 @@ public class Tema07Ejercicio06 {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[8];
+        int[] array = new int[80];
         rellenarPrimos(array);
         mostrarArray(array);
     }
