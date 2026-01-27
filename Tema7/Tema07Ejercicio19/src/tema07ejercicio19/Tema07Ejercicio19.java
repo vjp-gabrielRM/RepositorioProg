@@ -55,7 +55,7 @@ public class Tema07Ejercicio19 {
      * @param array 
      */
     public static void masRepetido(int array[]){
-        int[] repetidos = new int[MAX - MIN];
+        int[] repetidos = new int[(MAX - MIN) + 1];
         int referencia = 10;
         int pos = 0;
         
