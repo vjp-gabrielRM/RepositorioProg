@@ -20,7 +20,6 @@ public class Tema08Ejercicio06 {
     
     public static String pedirString(){
         Scanner entrada = new Scanner(System.in);
-        System.out.print("Por favor introduzca el número de empleados: ");
         return entrada.next();
     }
     
@@ -42,6 +41,7 @@ public class Tema08Ejercicio06 {
             
             System.out.print("¿Cuál es su tarifa por hora de trabajo? ");
             empleados[i].setTarifa(pedirNum());
+            
             System.out.println("EMPLEADO " + 1 + " ALMACENADO EXITOSAMENTE\n");
         }
     }
