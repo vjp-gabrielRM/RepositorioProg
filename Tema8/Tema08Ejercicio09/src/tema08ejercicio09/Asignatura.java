@@ -2,44 +2,44 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package tema08ejercicio07;
+package tema08ejercicio09;
 
 /**
  *
  * @author alumno
  */
-public class Dia {
+public class Asignatura {
     private String nombre;
-    private int temperatura;
+    private float nota;
 
-    public Dia() {
+    public Asignatura() {
         this.nombre = "";
-        this.temperatura = 0;
+        this.nota = 0;
     }
     
-    public Dia(String nombre, int temperatura) {
+    public Asignatura(String nombre, float nota) {
         this.nombre = nombre;
-        this.temperatura = temperatura;
+        this.nota = nota;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public int getTemperatura() {
-        return temperatura;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setTemperatura(int temperatura) {
-        this.temperatura = temperatura;
+    public float getNota() {
+        return nota;
+    }
+
+    public void setNota(float nota) {
+        this.nota = nota;
     }
     
     @Override
     public String toString(){
-        return "";
+        return this.nombre + ": " + this.nota;
     }
 }

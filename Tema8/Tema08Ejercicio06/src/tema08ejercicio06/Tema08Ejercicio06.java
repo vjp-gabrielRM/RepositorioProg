@@ -31,7 +31,7 @@ public class Tema08Ejercicio06 {
     
     public static void infoEmpleado(Empleado[] empleados){
         for(int i = 0;i < empleados.length; i++){
-            System.out.println("------ EMPLEADO " + i + " ------");
+            System.out.println("------ EMPLEADO " + (i+1) + " ------");
             
             System.out.print("Por favor introduzca el nombre del empleado: ");
             empleados[i].setNombre(pedirString());
@@ -42,7 +42,7 @@ public class Tema08Ejercicio06 {
             System.out.print("¿Cuál es su tarifa por hora de trabajo? ");
             empleados[i].setTarifa(pedirNum());
             
-            System.out.println("EMPLEADO " + 1 + " ALMACENADO EXITOSAMENTE\n");
+            System.out.println("EMPLEADO " + (i+1) + " ALMACENADO EXITOSAMENTE\n");
         }
     }
     

@@ -37,7 +37,7 @@ public class Tema08Ejercicio07 {
     
     public static void rellenarArray(Dia[] mes, String[] dias){
         System.out.println("Rellenando array...");
-        int diaSemana = (int) (Math.random() * 6);
+        int diaSemana = (int) (Math.random() * 7);
         mes[0].setNombre(dias[diaSemana]);
         for(int i = 1; i < mes.length; i ++){
             mes[i].setNombre(dias[(diaSemana + 1) % 7]);
