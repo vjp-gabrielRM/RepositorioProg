@@ -2,29 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package tema08ejercicio09;
+package tema08ejercicio15;
 
 /**
  *
  * @author alumno
  */
-public class Asignatura {
+public class Socio {
     private String nombre;
-    private float nota;
+    private float abono;
 
-    public Asignatura() {
+    public Socio() {
         this.nombre = "";
-        this.nota = 0;
+        this.abono = 0;
     }
     
-    public Asignatura(String nombre, float nota) {
+    public Socio(String nombre, float abono) {
         this.nombre = nombre;
-        this.nota = nota;
-    }
-    
-    public Asignatura(String nombre) {
-        this.nombre = nombre;
-        this.nota = 0;
+        this.abono = abono;
     }
 
     public String getNombre() {
@@ -35,16 +30,16 @@ public class Asignatura {
         this.nombre = nombre;
     }
 
-    public float getNota() {
-        return nota;
+    public float getAbono() {
+        return abono;
     }
 
-    public void setNota(float nota) {
-        this.nota = nota;
+    public void setAbono(float abono) {
+        this.abono = abono;
     }
     
     @Override
     public String toString(){
-        return this.nombre + ": " + this.nota;
+        return "";
     }
 }

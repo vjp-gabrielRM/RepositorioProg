@@ -44,42 +44,72 @@ public class Tema08Ejercicio09 {
     public static void rellenarNotas(Alumno[] alumnos){
         for(int i = 0;i < alumnos.length; i++){
             System.out.println("------ ALUMNO " + (i+1) + " ------");
-
-            for(int j = 0; j < alumnos[i].getNotas().length; j++){
-                do{
-                    System.out.print("Por favor introduzca la nota de " + alumnos[i].getNotas()[j].getNombre() + " de " + alumnos[i].getNombre() + ": ");
-                    alumnos[i].getNotas()[j].setNota(pedirOpcion());
-                    if(alumnos[i].getNotas()[j].getNota() < 0){
-                        System.out.println("No válido, inténtelo de nuevo");
-                    }
-                }while(alumnos[i].getNotas()[j].getNota() < 0);
-            }
+            alumnos[i].ponerNotas();
             System.out.println("NOTAS DE " + alumnos[i].getNombre() + " ALMACENADAS EXITOSAMENTE\n");
-        }
-    }
-    
-    public static void mostrarMuebles(Alumno[] alumnos){
-        System.out.println("Estos son todos los muebles: ");
-        for(int i = 0; i < array.length; i++){
-            System.out.println(array[i].toString());
         }
         System.out.println("");
     }
     
-    public static void mostrarPorPrecio(Alumno[] alumnos){
-        int precioMax;
-        boolean encontrado = false;
-        System.out.print("Por favor introduzca el precio máximo que busca: ");
-        precioMax = pedirOpcion();
-        for(int i = 0; i < array.length; i++){
-            if(array[i].getPrecio() <= precioMax){
-                System.out.println(array[i].toString());
-                encontrado = true;
+    public static void mostrarNotas(Alumno[] alumnos){
+        System.out.println("Estos son todos los alumnos con sus notas: ");
+        for(int i = 0; i < alumnos.length; i++){
+            System.out.println(alumnos[i].toString());
+        }
+        System.out.println("");
+    }
+    
+    public static void mejorAlumno(Alumno[] alumnos, String[] nombres){
+        int pos = 0;
+        float suma = 0;
+        float media = alumnos[0].calcularMedia();
+        for(int i = 1; i < alumnos.length; i++){
+            if(media <= alumnos[i].calcularMedia()){
+                media = alumnos[i].calcularMedia();
+                pos = i;
             }
         }
-        if(!encontrado){
-            System.out.println("Lo sentimos, no hay ningún mueble con un precio igual o menor a ese");
+        System.out.println("El mejor alumno es " + nombres[pos] + " con una media de " + media);
+        System.out.println("");
+    }
+    
+    public static void masSuspensos(Alumno[] alumnos, String[] nombres){
+        int[] suspensos = new int[3];
+        int pos = 0;
+        for(int i = 0; i < alumnos.length; i++){
+            for(int j = 0; j < alumnos[i].getNotas().length; j++){
+                if(alumnos[i].getNotas()[j].getNota() < 5){
+                    suspensos[i]++;
+                }
+            }
         }
+        
+        for (int i = 1; i < suspensos.length; i++) {
+            if (suspensos[pos] < suspensos[i]) {
+                pos = i;
+            }
+        }
+        System.out.println("El alumno con más suspensos es " + nombres[pos] + " con " + suspensos[pos] + " suspensos");
+        System.out.println("");
+    }
+    
+    public static void asignaturaDificil(Alumno[] alumnos){
+        float[] notasAsignaturas = new float[4];
+        String[] nombresAsignaturas = {"Lengua", "Mates", "Historia", "Física"};
+        int pos = 0;
+        
+        for(int i = 0; i < alumnos.length; i++){
+            for(int j = 0; j < notasAsignaturas.length; j++){
+                notasAsignaturas[j] += alumnos[i].getNotas()[j].getNota();
+            }
+        }
+        
+        for (int i = 1; i < notasAsignaturas.length; i++) {
+            if (notasAsignaturas[pos] > notasAsignaturas[i]) {
+                pos = i;
+            }
+        }
+        
+        System.out.println("La asignatura más difícil es " + nombresAsignaturas[pos] + " con una nota media de " + (notasAsignaturas[pos] / alumnos.length));
         System.out.println("");
     }
     
@@ -88,14 +118,10 @@ public class Tema08Ejercicio09 {
      */
     public static void main(String[] args) {
         int opcion;
-        Alumno[] alumnos = new Alumno[3];
         String[] nombres = {"Pepe", "Juan", "Marta"};
+        Alumno[] alumnos = new Alumno[3];
         for(int i = 0; i < alumnos.length; i++){
-            alumnos[i] = new Alumno();
-            alumnos[i].setNombre(nombres[i]);
-        }
-        for(int i = 0; i < alumnos.length; i++){
-            alumnos[i].nombrarAsignaturas();
+            alumnos[i] = new Alumno(nombres[i]);
         }
         
         do{
@@ -104,13 +130,19 @@ public class Tema08Ejercicio09 {
             System.out.println("");
             switch(opcion){
             case 1:
-                rellenarMuebles(alumnos);
+                rellenarNotas(alumnos);
                 break;
             case 2:
-                mostrarMuebles(alumnos);
+                mostrarNotas(alumnos);
                 break;
             case 3:
-                mostrarPorPrecio(alumnos);
+                mejorAlumno(alumnos, nombres);
+                break;
+            case 4:
+                masSuspensos(alumnos, nombres);
+                break;
+            case 5:
+                asignaturaDificil(alumnos);
                 break;
             case 6:
                 System.out.println("Saliendo...");

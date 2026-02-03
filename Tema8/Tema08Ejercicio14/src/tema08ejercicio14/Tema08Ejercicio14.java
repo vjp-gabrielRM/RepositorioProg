@@ -33,7 +33,7 @@ public class Tema08Ejercicio14 {
         System.out.println("6. Salir");
     }
     
-        public static int pedirOpcion(){
+    public static int pedirOpcion(){
         int opcion;
         Scanner entrada = new Scanner(System.in);
         
@@ -46,7 +46,7 @@ public class Tema08Ejercicio14 {
         return opcion;
     }
 
-        public static void rellenarAlumno(Alumno[] array){
+    public static void rellenarAlumno(Alumno[] array){
         int posicion;
         
         do{
@@ -66,7 +66,7 @@ public class Tema08Ejercicio14 {
             System.out.println("DATOS DE " + array[posicion].getNombre() + " ALMACENADO EXITOSAMENTE\n");
     }
         
-        public static void mostrarAlumnos(Alumno[] array){
+    public static void mostrarAlumnos(Alumno[] array){
         System.out.println("Estos son todos los alumnos: ");
         for(int i = 0; i < array.length; i++){
             System.out.println(array[i].toString());
