@@ -76,13 +76,18 @@ public class Pelicula {
     }
     
     public void rellenarSocios(){
+        String[] nombres = {"Juan", "Marta", "Pedro", "Ana", "Rubén", "Paula"};
+        String[] apellidos = {"Ramírez", "Gómez", "García", "López", "Ramos", "Macías"};
         for(int i = 0; i < this.socios.length; i++){
-            System.out.println("--- SOCIO " + (i+1) +  " ---");
+            /*System.out.println("--- SOCIO " + (i+1) +  " ---");
             System.out.print("Nombre: ");
             socios[i].setNombre(pedirString());
             System.out.print("Cantidad abonada (euros): ");
             socios[i].setAbono(pedirFloat());
-            System.out.println("");
+            System.out.println("");*/
+            
+            this.socios[i].setNombre(nombres[(int) (Math.random() * 6)] + " " + apellidos[(int) (Math.random() * 6)]);
+            this.socios[i].setAbono((float) Math.random() * (20 - 5) + 5);
         }
     }
     
