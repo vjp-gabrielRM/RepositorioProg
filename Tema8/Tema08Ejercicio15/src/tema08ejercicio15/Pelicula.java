@@ -57,7 +57,7 @@ public class Pelicula {
     
     @Override
     public String toString(){
-        return this.titulo + ", con un coste de licencia de " + this.licencia
+        return this.titulo + ", con un coste de licencia de " + this.licencia + " euros"
                 + " y los socios:\n"
                 + this.socios[0].toString() + "\n"
                 + this.socios[1].toString() + "\n"
@@ -80,7 +80,7 @@ public class Pelicula {
             System.out.println("--- SOCIO " + (i+1) +  " ---");
             System.out.print("Nombre: ");
             socios[i].setNombre(pedirString());
-            System.out.print("Cantidad abonada: ");
+            System.out.print("Cantidad abonada (euros): ");
             socios[i].setAbono(pedirFloat());
             System.out.println("");
         }

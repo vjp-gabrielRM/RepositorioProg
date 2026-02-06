@@ -53,7 +53,7 @@ public class Tema08Ejercicio15 {
             
             System.out.print("Por favor introduzca el título de la película: ");
             pelis[i].setTitulo(pedirString());
-            System.out.print("Por favor introduzca el coste de la licencia: ");
+            System.out.print("Por favor introduzca el coste de la licencia en euros: ");
             pelis[i].setLicencia(pedirFloat());
             System.out.println("");
             pelis[i].rellenarSocios();
@@ -79,7 +79,7 @@ public class Tema08Ejercicio15 {
             }
         }
         
-        System.out.println("La película más rentable es " + pelis[pos].getTitulo() + " con un beneficio neto de " + beneficio[pos]);
+        System.out.println("La película más rentable es " + pelis[pos].getTitulo() + " con un beneficio neto de " + beneficio[pos] + " euros");
         System.out.println("");
     }
     
@@ -96,7 +96,7 @@ public class Tema08Ejercicio15 {
             }
         }
         
-        System.out.println("La película más rentable es " + pelis[pos].getTitulo() + " con un beneficio neto de " + beneficio[pos]);
+        System.out.println("La película menos rentable es " + pelis[pos].getTitulo() + " con un beneficio neto de " + beneficio[pos] + " euros");
         System.out.println("");
     }
     
@@ -108,7 +108,7 @@ public class Tema08Ejercicio15 {
         for(int i = 0; i < pelis.length; i++){
             if(pelis[i].getTitulo().equalsIgnoreCase(nombre)){
                 System.out.println("La película " + pelis[i].getTitulo() + " ha tenido un beneficio neto de "
-                        + (pelis[i].ventas() - pelis[i].getLicencia()) + " y sus socios son:");
+                        + (pelis[i].ventas() - pelis[i].getLicencia()) + " euros y sus socios son:");
                 pelis[i].mostrarSocios();
             }
         }
@@ -118,7 +118,7 @@ public class Tema08Ejercicio15 {
     public static void contarAbonosExtra(Pelicula[] pelis){
         float cantidad;
         int num = 0;
-        System.out.print("Por favor introduzca el precio de referencia: ");
+        System.out.print("Por favor introduzca el precio de referencia en euros: ");
         cantidad = pedirFloat();
         
         for(int i = 0; i < pelis.length; i++){
@@ -128,7 +128,7 @@ public class Tema08Ejercicio15 {
                 }
             }
         }
-        System.out.println("Ha pagado más de " + cantidad + " un total de " + num + " socios");
+        System.out.println("Ha pagado más de " + cantidad + " euros un total de " + num + " socios");
         System.out.println("");
     }
     
