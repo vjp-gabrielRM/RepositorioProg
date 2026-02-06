@@ -40,6 +40,6 @@ public class Socio {
     
     @Override
     public String toString(){
-        return "";
+        return this.nombre + ", con un abono de " + this.abono;
     }
 }

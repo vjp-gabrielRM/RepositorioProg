@@ -4,6 +4,8 @@
  */
 package tema08ejercicio15;
 
+import java.util.Scanner;
+
 /**
  *
  * @author alumno
@@ -55,6 +57,46 @@ public class Pelicula {
     
     @Override
     public String toString(){
-        return "";
+        return this.titulo + ", con un coste de licencia de " + this.licencia
+                + " y los socios:\n"
+                + this.socios[0].toString() + "\n"
+                + this.socios[1].toString() + "\n"
+                + this.socios[2].toString() + "\n"
+                + this.socios[3].toString() + "\n";
+    }
+    
+    public static String pedirString(){
+        Scanner entrada = new Scanner(System.in);
+        return entrada.next();
+    }
+    
+    public static float pedirFloat(){
+        Scanner entrada = new Scanner(System.in);
+        return entrada.nextFloat();
+    }
+    
+    public void rellenarSocios(){
+        for(int i = 0; i < this.socios.length; i++){
+            System.out.println("--- SOCIO " + (i+1) +  " ---");
+            System.out.print("Nombre: ");
+            socios[i].setNombre(pedirString());
+            System.out.print("Cantidad abonada: ");
+            socios[i].setAbono(pedirFloat());
+            System.out.println("");
+        }
+    }
+    
+    public float ventas(){
+        float suma = 0;
+        for(int i = 0; i < this.socios.length; i++){
+            suma += this.socios[i].getAbono();
+        }
+        return suma;
+    }
+    
+    public void mostrarSocios(){
+        for(int i = 0; i < this.socios.length; i++){
+            System.out.println(this.socios[i].toString());
+        }
     }
 }

@@ -107,7 +107,7 @@ public class Tema08Ejercicio14 {
         nombre = pedirString();
         
         for(int i = 0; i < array.length; i++){
-            if(array[i].getNombre().equals(nombre)){
+            if(array[i].getNombre().equalsIgnoreCase(nombre)){
                 System.out.println(array[i].toString());
             }
         }
