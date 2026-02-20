@@ -21,6 +21,7 @@ public class Tema09Ejercicio09 {
      */
     public static void main(String[] args) {
         String usuario, contrasenna;
+        int cont = 0;
         
         System.out.print("Por favor introduzca el usuario: ");
         usuario = pedirString();
@@ -28,10 +29,28 @@ public class Tema09Ejercicio09 {
         do{
             System.out.print("Por favor introduzca la contraseña: ");
             contrasenna = pedirString();
-            if(contrasenna.length() < 6){
-                System.out.println("\nContraseña no válida, inténtelo de nuevo");
+            for (int i = 0; i < contrasenna.length(); i++) {
+                if(contrasenna.charAt(i) > 48 && contrasenna.charAt(i) < 57){
+                    cont++;
+                }
             }
-        }while(contrasenna.length() < 6);
+            if(contrasenna.length() < 6 || cont < 2 || contrasenna.contains(usuario)){
+                System.out.print("\nContraseña no válida");
+                cont = 0;
+            }
+            if(contrasenna.length() < 6){
+                System.out.print(", debe tener una longitud de al menos 6 caracteres");
+            }
+            if(cont < 2){
+                System.out.print(", debe tener al menos 2 dígitos");
+            }
+            if(contrasenna.contains(usuario)){
+                System.out.print(", no debe contener el usuario");
+            }
+            if(contrasenna.length() < 6 || cont < 2 || contrasenna.contains(usuario)){
+                System.out.println("\n");
+            }
+        }while(contrasenna.length() < 6 || cont < 2 || contrasenna.contains(usuario));
     }
     
 }
