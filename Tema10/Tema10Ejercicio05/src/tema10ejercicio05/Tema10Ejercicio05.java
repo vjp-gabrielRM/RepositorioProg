@@ -52,23 +52,26 @@ public class Tema10Ejercicio05 {
         int resultado;
         int pos = 0;
         for (int i = 1; i < lista.size(); i++) {
-            if (lista.get(pos) < lista.get(i) && lista.get(pos) % 2 = 0) {
+            if ((lista.get(pos) < lista.get(i)) && (lista.get(i) % 2 == 0)) {
                 pos = i;
             }
         }
-        return resultado;
+        resultado = lista.get(pos);
+        System.out.println("El mayor par es " + resultado + " en la posición " + (lista.indexOf(resultado) + 1));
+        return pos;
     }
     
     public static int menorImpar(ArrayList<Integer> lista) {
-        int resultado;     
+        int resultado;
         int pos = 0;
         for (int i = 1; i < lista.size(); i++) {
-            if (lista.get(pos) > lista.get(i) && lista.get(pos) % 2 = 1) {
+            if ((lista.get(pos) > lista.get(i)) && (lista.get(i) % 2 != 0)) {
                 pos = i;
             }
         }
-        
-        return resultado;
+        resultado = lista.get(pos);
+        System.out.println("El menor impar es " + resultado + " en la posición " + (lista.indexOf(resultado) + 1));
+        return pos;
     }
     /**
      * @param args the command line arguments
@@ -78,7 +81,7 @@ public class Tema10Ejercicio05 {
         rellenarLista(lista);
         mostrarLista(lista);
         intercambio(lista, mayorPar(lista), menorImpar(lista));
-        
+        mostrarLista(lista);
     }
     
 }
