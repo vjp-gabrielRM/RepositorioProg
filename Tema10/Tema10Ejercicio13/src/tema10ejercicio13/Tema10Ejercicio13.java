@@ -31,9 +31,9 @@ public class Tema10Ejercicio13 {
     }
     
     public static void rellenarLista(ArrayList<Venta> meses, String[] nombresMeses) {
-        System.out.println("Rellenando...");
+        System.out.println("Rellenando...\n");
         for (int i = 0; i < MESES; i++) {
-            meses.set(i, new Venta(nombresMeses[i], (int) (Math.random() * 200)));
+            meses.add(new Venta(nombresMeses[i], (int) (Math.random() * 200)));
         }
     }
     
@@ -42,6 +42,7 @@ public class Tema10Ejercicio13 {
         for (int i = 0; i < MESES; i++) {
             System.out.println(meses.get(i).toString());
         }
+        System.out.println("");
     }
     
     public static void mostrarTotal(ArrayList<Venta> meses) {
@@ -73,11 +74,11 @@ public class Tema10Ejercicio13 {
 
         }
 
-        System.out.println("Los meses con más ventas son: ");
+        System.out.println("El mes o meses con más ventas son: ");
         for (int i = 0; i < meses.size(); i++) {
 
             if (meses.get(i).getVentasMes() == max) {
-                System.out.println(meses.get(i).getNombreMes() + "con " + max + " ventas");
+                System.out.println(meses.get(i).getNombreMes() + " con " + max + " ventas");
             }
 
         }
