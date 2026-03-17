@@ -137,7 +137,7 @@ public class Tema10Ejercicio16 {
         do{
             System.out.println("¿Cuántas unidades de " + productos.get(indice).getNombre() + " desea comprar? ");
             cantidad = pedirInt();
-            if(cantidad > 1 && cantidad < productos.get(indice).getStock()){
+            if(cantidad < 1 || cantidad > productos.get(indice).getStock()){
                 System.out.println("Por favor introduzca una cantidad válida, el stock disponible es de " + productos.get(indice).getStock());
                 cantidad = -1;
             }
