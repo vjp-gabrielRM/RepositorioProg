@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package tema11ejercicio06;
+package tema11ejercicio07   ;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -26,6 +26,11 @@ public class Campania {
         this.donaciones = donaciones;
         this.nombre = nombre;
     }
+    
+    public Campania(String nombre) {
+        this.donaciones = new HashSet<>();
+        this.nombre = nombre;
+    }
 
     public HashSet<Donacion> getDonaciones() {
         return donaciones;
@@ -45,7 +50,11 @@ public class Campania {
 
     @Override
     public String toString() {
-        return "";
+        String resultado = "Campaña " + this.nombre + ":\n";
+        for (Donacion donacion : donaciones) {
+            resultado = resultado.concat(donacion.toString());
+        }
+        return resultado;
     }
 
     public void nuevaDonacion() {
@@ -58,12 +67,6 @@ public class Campania {
         Donacion donacion = new Donacion(nombreDonante, cantidad);
         donaciones.add(donacion);
     }
-
-    public void mostrarDonaciones() {
-        for (Donacion donacion : donaciones) {
-            System.out.println(donacion);
-        }
-    }
     
     public static String pedirString(){
         Scanner entrada = new Scanner(System.in);
@@ -75,42 +78,22 @@ public class Campania {
         return entrada.nextFloat();
     }
 
-    public void mostrarPorDonante() {
-        boolean encontrado = false;
-        
-        System.out.print("Nombre del donante: ");
-        String nombreDonante = pedirString();
-        for (Donacion donacion : donaciones) {
-            if (donacion.getNombre().equalsIgnoreCase(nombreDonante)) {
-                System.out.println(donacion);
-                encontrado = true;
-            }
-        }
-
-        if (!encontrado) {
-            System.out.println("No encontrado");
-        }
-    }
-
-    public void mostrarNumDonaciones() {
-        System.out.println("El número de donaciones de esta campaña es de " + donaciones.size());
-    }
-
-    public void mostrarTotal() {
+    public float calcularTotal() {
         float total = 0;
         for (Donacion donacion : donaciones) {
             total += donacion.getCantidad();
         }
-        System.out.printf("El total de todas las donaciones es de %.2f euros", total);
+        return total;
     }
 
-    public void ordenarDonaciones() {
-        ArrayList<Donacion> ordenadas = new ArrayList<>(donaciones);
+    public float mayorDonacion() {
+        float mayor = 0;
 
-        ordenadas.sort((donacion1, donacion2) -> Float.compare(donacion1.getCantidad(), donacion2.getCantidad()));
-
-        for (Donacion donacion : ordenadas) {
-            System.out.println(donacion);
+        for (Donacion donacion : donaciones) {
+            if (donacion.getCantidad() > mayor) {
+                mayor = donacion.getCantidad();
+            }
         }
+        return mayor;
     }
 }
