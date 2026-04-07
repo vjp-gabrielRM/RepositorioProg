@@ -99,12 +99,17 @@ public class Tema11Ejercicio08 {
     }
     
     public static void ordenarSedesPorIngresos(ArrayList<Ciudad> ciudades){
-        ArrayList<Sede> ordenadas = new ArrayList<>(ciudades.getSedes());
+        ArrayList<Sede> ordenadas = new ArrayList<>();
 
-        ordenadas.sort((donacion1, donacion2) -> Float.compare(donacion1.getCantidad(), donacion2.getCantidad()));
+        for (Ciudad ciudad : ciudades) {
+            ordenadas.addAll(ciudad.getSedes());
+        }
+        
+        ordenadas.sort((sede1, sede2) -> Float.compare(sede1.getIngresos(), sede2.getIngresos()));
 
-        for (Donacion donacion : ordenadas) {
-            System.out.println(donacion);
+        System.out.println("Estas son todas las sedes ordenadas por ingresos de mayor a menor:\n");
+        for (Sede sede : ordenadas) {
+            System.out.println(sede);
         }
     }
     
