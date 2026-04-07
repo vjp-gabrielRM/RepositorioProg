@@ -40,6 +40,6 @@ public class Sede {
     
     @Override
     public String toString(){
-        return "";
+        return "    Nombre: " + this.nombre + "\n   Ingresos: " + this.ingresos + " euros\n\n";
     }
 }
