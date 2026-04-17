@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package tema12ejercicio05;
+package tema12ejercicio06;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -10,6 +10,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -17,12 +18,12 @@ import java.util.Scanner;
  *
  * @author alumno
  */
-public class Tema12Ejercicio05 {
+public class Tema12Ejercicio06 {
 
     public static void mostrarMenu() {
         System.out.println("---- MENÚ ----\n");
-        System.out.println("1. Añadir contactos a la agenda");
-        System.out.println("2. Mostrar la agenda");
+        System.out.println("1. Volcado de los 100 primeros pares a un fichero con nombre personalizado");
+        System.out.println("2. Mostrar el contenido del fichero");
         System.out.println("3. Salir\n");
         System.out.print("Elija una opción: ");
     }
@@ -37,30 +38,33 @@ public class Tema12Ejercicio05 {
         return entrada.nextLine();
     }
     
-    public static void nuevoContacto(){
-        System.out.print("Nombre del contacto: ");
-        String nombre = pedirString();
-        System.out.print("Edad del contacto: ");
-        int edad = pedirNum();
-        System.out.print("Número de teléfono del contacto: ");
-        String telefono = pedirString();
-        
+    public static String nombrarFichero(){
+        System.out.print("Elija el nombre del fichero en el que volcar los números: ");
+        return pedirString();
+    }
+    
+    public static void volcarArray(int[] array, String nombreFichero){        
         try (
-            FileWriter fw = new FileWriter("agenda.txt", true);
+            FileWriter fw = new FileWriter(nombreFichero + ".txt");
             PrintWriter pw = new PrintWriter(fw);
         ) {
-            pw.println("Nombre: " + nombre + "\nEdad: " + edad + "\nNúmero de teléfono: " + telefono + "\n");
+            pw.println(Arrays.toString(array));
         } catch (IOException e) {
             System.out.println("Error en la escritura del archivo");
         }
-        
     }
     
-    public static void mostrarContactos() {
+    public static void rellenarArray(int[] array){
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (i+1) * 2;
+        }
+    }
+    
+    public static void mostrarFichero(String nombreFichero) {
         String linea;
-        System.out.println("Los contactos guardados en la lista son:\n");
+        System.out.println("El contenido del fichero es:\n");
         try (
-            FileReader fr = new FileReader("agenda.txt");
+            FileReader fr = new FileReader(nombreFichero + ".txt");
             BufferedReader br = new BufferedReader(fr);
         ) {
             linea = br.readLine();
@@ -81,6 +85,9 @@ public class Tema12Ejercicio05 {
      */
     public static void main(String[] args) {
         int opcion;
+        int[] array = new int[100];
+        rellenarArray(array);
+        String nombreFichero = "";
 
         do {
             mostrarMenu();
@@ -92,10 +99,11 @@ public class Tema12Ejercicio05 {
 
             switch (opcion) {
                 case 1:
-                    nuevoContacto();
+                    nombreFichero = nombrarFichero();
+                    volcarArray(array, nombreFichero);
                     break;
                 case 2:
-                    mostrarContactos();
+                    mostrarFichero(nombreFichero);
                     break;
                 case 3:
                     System.out.println("Saliendo...");
