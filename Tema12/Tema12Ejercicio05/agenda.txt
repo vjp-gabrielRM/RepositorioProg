@@ -6,3 +6,11 @@ Nombre: sdfhb
 Edad: 14
 Número de teléfono: 987456845
 
+Nombre: Juan
+Edad: 18
+Número de teléfono: 655555555
+
+Nombre: Pedro
+Edad: 20
+Número de teléfono: 610000000
+

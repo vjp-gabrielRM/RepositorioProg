@@ -1,0 +1,14 @@
+Nombre y apellido(s): Hola
+Sexo: H
+Edad: 45
+Número de suspensos del curso anterior: 3
+Residencia familiar: SI
+Ingresos anuales de la familia: 1234 euros
+
+Nombre y apellido(s): Prueba
+Sexo: M
+Edad: 24
+Número de suspensos del curso anterior: 3
+Residencia familiar: NO
+Ingresos anuales de la familia: 4534 euros
+
