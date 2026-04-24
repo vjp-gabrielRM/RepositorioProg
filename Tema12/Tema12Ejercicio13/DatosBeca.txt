@@ -1,14 +1,4 @@
-Nombre y apellido(s): Hola
-Sexo: H
-Edad: 45
-Número de suspensos del curso anterior: 3
-Residencia familiar: SI
-Ingresos anuales de la familia: 1234 euros
-
-Nombre y apellido(s): Prueba
-Sexo: M
-Edad: 24
-Número de suspensos del curso anterior: 3
-Residencia familiar: NO
-Ingresos anuales de la familia: 4534 euros
-
+Pepe Pérez#H#25#0#SI#20000
+Juan Ramos#H#20#1#NO#40000
+Marta Sánchez#M#30#0#SI#15000
+Laura Fernández#M#50#4#SI#50000

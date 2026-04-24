@@ -18,7 +18,6 @@ public class Tema12Ejercicio12bis {
     public static void sumarDoc() {
         String linea;
         int recorrer = 0;
-        boolean encontradas = false;
         String numero = "";
         int posInicio = 0;
         int suma = 0;
