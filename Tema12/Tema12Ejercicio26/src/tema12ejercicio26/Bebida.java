@@ -4,11 +4,13 @@
  */
 package tema12ejercicio26;
 
+import java.io.Serializable;
+
 /**
  *
  * @author alumno
  */
-public class Bebida {
+public class Bebida implements Serializable {
     private String nombre;
     private float precio;
     private int stock;
@@ -51,6 +53,8 @@ public class Bebida {
     
     @Override
     public String toString(){
-        return "";
+        return this.nombre + 
+                "\nPrecio: " + this.precio + 
+                " euro(s)\nCantidad disponible: " + this.stock;
     }
 }

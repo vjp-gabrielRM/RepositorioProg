@@ -4,9 +4,12 @@
  */
 package tema12ejercicio26;
 
+import java.io.EOFException;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -46,6 +49,7 @@ public class Tema12Ejercicio26 {
         String nombre;
         int stock;
         float precio;
+        Bebida bebida;
         
         try(
             FileOutputStream fos = new FileOutputStream("bebidas.txt", true); 
@@ -59,20 +63,46 @@ public class Tema12Ejercicio26 {
                 System.out.print("Introduzca la cantidad disponible del producto: ");
                 stock = pedirInt();
                 
-                oos.writeObject(new Bebida(nombre, precio, stock));
+                bebida = new Bebida(nombre, precio, stock);
             
+                oos.writeObject(bebida);
+                
                 System.out.print("\n¿Desea introducir otro producto? (S: Sí, Otro: No) ");
                 opcion = pedirString().charAt(0);
             }while(opcion == 's' || opcion == 'S');
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Tema12Ejercicio26.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Archivo no encontrado");
         } catch (IOException ex) {
-            Logger.getLogger(Tema12Ejercicio26.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Ha habido un error");
+        }
+    }
+    
+    public static void mostrarProductos(){
+        int i = 1;
+        try(
+                FileInputStream fis = new FileInputStream("bebidas.txt");
+                ObjectInputStream ois = new ObjectInputStream(fis);
+        ) {
+            Bebida bebida;
+            
+            while(true) {   // Leemos mientras haya objetos
+                bebida = (Bebida) ois.readObject();
+                System.out.println(i + ": " + bebida + "\n");
+                i++;
+            }
+        } catch(EOFException e) {   // Salta cuando llegamos al final del fichero.
+            System.out.println("Fin de lectura.");
+        } catch (FileNotFoundException ex) {
+            System.out.println("Archivo no encontrado");
+        } catch (IOException ex) {
+            System.out.println("Ha habido un error");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Clase no encontrada");
         }
     }
     
     public static void comprarProductos(){
-        
+        mostrarProductos();
     }
     
     /**
@@ -90,6 +120,7 @@ public class Tema12Ejercicio26 {
                         introducirBebidas();
                         break;
                     case 2:
+                        System.out.println("");
                         comprarProductos();
                         break;
                     case 3:
